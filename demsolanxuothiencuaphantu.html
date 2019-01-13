@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dem so lan xuot hien cua phan tu</title>
+</head>
+<body>
+<script>
+    var number = parseInt(prompt("nhap so"))
+    var nums = [];
+    for (var i = 0; i < 100; i++) {
+        nums[i] = Math.floor(Math.random() * 101);
+        nums.sort(function (a, b) {
+            return a - b;
+        })
+    }
+    function dispArr(arr) {
+        for (var i = 0; i < arr.length; ++i) {
+            document.write(arr[i] + " ");
+            if (i % 10 == 9) {
+                document.write("</br>");
+            }
+        }
+        if (i % 10 != 0) {
+            document.write("</br>");
+        }
+    }
+    dispArr(nums)
+    function search1(arr, data) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == data) {
+                return i;
+            }
+        }
+        return 'no index';
+    }
+    function search2(arr, data) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == data) {
+                return arr[i];
+            } else {
+                return data;
+            }
+        }
+    }
+    var a = search1(nums, number)
+    var b = search2(nums, number)
+    document.write("gia tri " + b + " at posittion " + a);
+</script>
+</body>
+</html>
